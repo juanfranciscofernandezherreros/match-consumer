@@ -1,4 +1,4 @@
-package com.basketball.match.consumer;
+package com.basketball.match;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

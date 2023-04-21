@@ -38,12 +38,14 @@ public class TopicListener {
         UserWrapper userWrapper = new UserWrapper();
 
         if(data.getPayload().getOp().equals("c")) {
+            log.info("Se tiene que crear");
             userWrapper.setEmail(data.getPayload().getAfter().getEmail());
             userWrapper.setId(data.getPayload().getAfter().getId().longValue());
             userWrapper.setFirstName(data.getPayload().getAfter().getFirstName());
             userWrapper.setLastName(data.getPayload().getAfter().getLastName());
             User user = convertUserWrapperToEntity(userWrapper);
             log.info("User {}" , user);
+            userService.createUser(user);
         }
 
         if(data.getPayload().getOp().equals("U")){

@@ -1,6 +1,6 @@
 package com.basketball.match;
 
-import com.basketball.match.entity.User;
+import com.basketball.match.entity.Fixtures;
 import com.basketball.match.service.UserService;
 import com.basketball.match.wrapper.UserWrapper;
 import com.basketball.match.model.Example;
@@ -43,7 +43,7 @@ public class TopicListener {
             userWrapper.setId(data.getPayload().getAfter().getId().longValue());
             userWrapper.setFirstName(data.getPayload().getAfter().getFirstName());
             userWrapper.setLastName(data.getPayload().getAfter().getLastName());
-            User user = convertUserWrapperToEntity(userWrapper);
+            Fixtures user = convertUserWrapperToEntity(userWrapper);
             log.info("User {}" , user);
             userService.createUser(user);
         }
@@ -59,8 +59,8 @@ public class TopicListener {
         }
     }
 
-    private User convertUserWrapperToEntity(UserWrapper userWrapper) {
-        User user = new User ();
+    private Fixtures convertUserWrapperToEntity(UserWrapper userWrapper) {
+        Fixtures user = new Fixtures();
         user.setId(userWrapper.getId());
         user.setFirstName(userWrapper.getFirstName());
         user.setLastName(userWrapper.getLastName());

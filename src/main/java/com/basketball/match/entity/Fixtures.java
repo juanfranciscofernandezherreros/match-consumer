@@ -9,15 +9,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 // Annotations
 import lombok.AllArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+
 @Document
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class User {
+public class Fixtures {
     @Id
     private Long id;
     private String firstName;
